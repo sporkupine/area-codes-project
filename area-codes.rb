@@ -14,20 +14,23 @@ area_codes = {
 
 # Get city names from the hash
 def get_city_names(hash)
-
+  return hash.keys
 end
 
 # Get area code based on given hash and key
 def get_area_code(hash, key)
-
+  return "The area code for #{key} is #{hash[key]}." 
 end
 
 # Execution flow
 loop do
   puts "Would you like to look up an area code? (Y/N)"
   response = gets.chomp.downcase
-  if response == "y"
-    puts area_codes.keys
-  else break
-  end
+  break if response != "y"
+  puts "Please select a city from our list:"
+  puts get_city_names(area_codes)
+  print "Your selection: "
+  city = gets.chomp.downcase
+  puts get_area_code(area_codes, city)
+  break
 end
