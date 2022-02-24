@@ -19,5 +19,15 @@ end
 
 # Get area code based on given hash and key
 def get_area_code(hash, key)
-  
+
+end
+
+# Execution flow
+loop do
+  puts "Would you like to look up an area code? (Y/N)"
+  response = gets.chomp.downcase
+  if response == "y"
+    puts area_codes.keys
+  else break
+  end
 end
